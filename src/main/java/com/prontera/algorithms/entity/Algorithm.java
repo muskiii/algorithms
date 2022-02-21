@@ -1,14 +1,18 @@
 package com.prontera.algorithms.entity;
 
-import java.util.List;
-
 public abstract class Algorithm {
+    private final String name;
     private final String description;
     private final String complexity;
 
-    public Algorithm(String description, String complexity) {
+    public Algorithm(String name, String description, String complexity) {
+        this.name = name;
         this.description = description;
         this.complexity = complexity;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
@@ -19,5 +23,5 @@ public abstract class Algorithm {
         return complexity;
     }
 
-    public abstract List<Integer> run(List<Integer> input);
+    public abstract Integer[] run(Integer[] input);
 }

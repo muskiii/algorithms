@@ -1,11 +1,9 @@
 package com.prontera.algorithms.entity;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class QuickSortAlgorithm extends Algorithm {
 
-    private final static String description = "Quicksort algorithm\n" +
+    private final static String NAME = "Quick Sort";
+    private final static String DESCRIPTION = "Quicksort algorithm\n" +
             "Quicksort algorithm is one of the most used sorting algorithm, especially to sort large lists/arrays. Quicksort is a divide and conquer algorithm, which means original array is divided into two arrays, each of them is sorted individually and then sorted output is merged to produce the sorted array. On the average, it has O(n log n) complexity, making quicksort suitable for sorting big data volumes.\n" +
             "\n" +
             "In more standard words, quicksort algorithm repeatedly divides an un-sorted section into a lower order sub-section and a higher order sub-section by comparing to a pivot element. At the end of recursion, we get sorted array. Please note that the quicksort can be implemented to sort “in-place”. This means that the sorting takes place in the array and that no additional array need to be created.\n" +
@@ -17,18 +15,20 @@ public class QuickSortAlgorithm extends Algorithm {
             "    Select an element as a pivot element, generally from middle but not necessary.\n" +
             "    Data elements are grouped into two parts: one with elements that are in lower order than the pivot element, one with element that are in higher order than the pivot element.\n" +
             "    Sort the both parts separately by repeating step 1 and 2.\n" +
-            "In Java, Arrays.sort() method uses quick sort algorithm to sort array of primitives using double pivot elements. Double pivot makes this algorithm even more faster. Check that out.";
-    private final static String complexity = "O(n log n)";
+            "In Java, Arrays.sort() method uses quick sort algorithm to sort array of primitives using double pivot elements. Double pivot makes this algorithm even more faster. Check that out." +
+            "Request example: \n" +
+            "Input => [3,4,5,2,6,8,1,20]\n" +
+            "Output => [1,2,3,4,5,6,8,20]";
+    private final static String COMPLEXITY = "O(n log n)";
 
     public QuickSortAlgorithm() {
-        super(description, complexity);
+        super(NAME, DESCRIPTION, COMPLEXITY);
     }
 
     @Override
-    public List<Integer> run(List<Integer> input) {
-        Integer[] array = input.toArray(new Integer[input.size()-1]);
+    public Integer[] run(Integer[] array) {
         quickSort(array, 0, array.length -1);
-        return Arrays.asList(array);
+        return array;
     }
 
     public static void quickSort(Integer[] arr, int low, int high)

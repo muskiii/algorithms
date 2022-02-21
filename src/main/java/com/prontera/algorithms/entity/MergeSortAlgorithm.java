@@ -1,10 +1,9 @@
 package com.prontera.algorithms.entity;
 
-import java.util.List;
-
 public class MergeSortAlgorithm extends Algorithm {
 
-    private final static String description = "In computer science, merge sort (also commonly spelled mergesort) is a comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the implementation preserves the input order of equal elements in the sorted output. Mergesort is a divide and conquer algorithm. Divide and conquer algorithms divide the original data into smaller sets of data to solve the problem.\n" +
+    private final static String NAME = "Merge Sort";
+    private final static String DESCRIPTION = "In computer science, merge sort (also commonly spelled mergesort) is a comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the implementation preserves the input order of equal elements in the sorted output. Mergesort is a divide and conquer algorithm. Divide and conquer algorithms divide the original data into smaller sets of data to solve the problem.\n" +
             "\n" +
             "During the Mergesort process the object in the collection are divided into two collections. To split a collection, Mergesort will take the middle of the collection and split the collection into its left and its right part. The resulting collections are again recursively splitted via the Mergesort algorithm until they are broke to single element in each collection.\n" +
             "\n" +
@@ -15,14 +14,14 @@ public class MergeSortAlgorithm extends Algorithm {
             "Once all elements from both collections have been inserted in the new collection, Mergesort has successfully sorted the collection.\n" +
             "\n" +
             "To avoid the creation of too many collections, typically only one new collection is created and the new one and existing one are treated as different collections.";
-    private final static String complexity = "O(n log n)";
+    private final static String COMPLEXITY = "O(n log n)";
 
     public MergeSortAlgorithm() {
-        super(description, complexity);
+        super(NAME, DESCRIPTION, COMPLEXITY);
     }
 
     @Override
-    public List<Integer> run(List<Integer> input) {
+    public Integer[] run(Integer[] input) {
         return null;
     }
 }

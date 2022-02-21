@@ -5,9 +5,9 @@ import com.prontera.algorithms.entity.MergeSortAlgorithm;
 import com.prontera.algorithms.entity.QuickSortAlgorithm;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 public class SortingAlgorithms {
@@ -18,8 +18,8 @@ public class SortingAlgorithms {
     }
 
     @PostMapping("/quick-sort")
-    public List<Integer> quickSortRun(List<Integer> input){
-        return new QuickSortAlgorithm().run(input);
+    public Integer[] quickSortRun(@RequestBody Integer[] array){
+        return new QuickSortAlgorithm().run(array);
     }
 
     @GetMapping("/merge-sort")
