@@ -1,6 +1,6 @@
-package com.prontera.algorithms.entity;
+package com.prontera.algorithms.entity.algorithm;
 
-public class QuickSortAlgorithm extends Algorithm {
+public class QuickSortAlgorithm extends SortingAlgorithm {
 
     private final static String NAME = "Quick Sort";
     private final static String DESCRIPTION = "Quicksort algorithm\n" +

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelpController {
 
     @GetMapping("/help")
-    public String listControllers(){
+    public String help(){
         return "Algorithms available: \n" +
                 "/quick-sort \n" +
                 "/merge-sort";

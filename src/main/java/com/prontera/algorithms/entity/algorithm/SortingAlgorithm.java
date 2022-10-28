@@ -1,11 +1,13 @@
-package com.prontera.algorithms.entity;
+package com.prontera.algorithms.entity.algorithm;
 
-public abstract class Algorithm {
+import java.util.function.Supplier;
+
+public abstract class SortingAlgorithm implements Algorithm<Integer[], Integer[]> {
     private final String name;
     private final String description;
     private final String complexity;
 
-    public Algorithm(String name, String description, String complexity) {
+    protected SortingAlgorithm(String name, String description, String complexity) {
         this.name = name;
         this.description = description;
         this.complexity = complexity;
@@ -23,5 +25,7 @@ public abstract class Algorithm {
         return complexity;
     }
 
-    public abstract Integer[] run(Integer[] input);
+    public Supplier<Integer[]> runner(Integer[] array){
+        return () -> run(array);
+    }
 }
